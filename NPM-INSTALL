@@ -1,0 +1,9 @@
+npm create vite@latest shop -- --template react
+cd shop
+npm install
+
+npm install redux
+npm install react-redux
+
+// run the local server :
+npm run dev
