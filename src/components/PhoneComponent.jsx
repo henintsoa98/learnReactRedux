@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import phone from '../images/phone.png'
+import { buyPhone } from '../redux/phone/actionPhone'
 
 function PhoneComponent(props) {
 	console.log(props)
@@ -22,4 +23,10 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(PhoneComponent)
+const mapDispatchToProps = (dispatch) => {
+	return {
+		buyPhone: () => dispatch(buyPhone())
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PhoneComponent)
