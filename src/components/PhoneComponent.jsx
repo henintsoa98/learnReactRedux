@@ -12,7 +12,7 @@ function PhoneComponent(props) {
 				Disponibilité:
 				<span id="count">{ props.phones }</span>
 			</p>
-			<button>Acheter</button>
+			<button onClick={() => props.buyPhone()}>Acheter</button>
 		</div>
 	)
 }
