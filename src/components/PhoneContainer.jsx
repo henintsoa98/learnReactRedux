@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import phone from '../images/phone.png'
 import { buyPhone } from '../redux/phone/actionPhone'
 
 function PhoneContainer(props) {
+	const [totalPhone, setTotalPhone] = useState(1)
 	console.log(props)
 	return (
 		<div className="container">
@@ -12,7 +13,10 @@ function PhoneContainer(props) {
 				Disponibilité:
 				<span id="count">{ props.phones }</span>
 			</p>
-			<button onClick={() => props.buyPhone()}>Acheter</button>
+			<div className="btnContainer">
+				<button onClick={() => props.buyPhone()}>Acheter</button>
+				<input type="text" value={totalPhone} />
+			</div>
 		</div>
 	)
 }
