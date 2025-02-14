@@ -1,7 +1,7 @@
 import { BUY_TV } from './type'
 
 const initialStateTv = {
-	tv: 5
+	tv: 10
 }
 
 const tvReducer = (state = initialStateTv, action) => {

@@ -19,7 +19,7 @@ function PhoneContainer(props) {
 
 const mapStateToProps = (state) => {
 	return {
-		phones: state.phones
+		phones: state.phone.phones
 	}
 }
 
