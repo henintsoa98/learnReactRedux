@@ -5,6 +5,8 @@ import { buyPhone } from '../redux/phone/actionPhone'
 
 function PhoneContainer(props) {
 	const [totalPhone, setTotalPhone] = useState(1)
+	// console.log(totalPhone)
+
 	console.log(props)
 	return (
 		<div className="container">
@@ -14,8 +16,8 @@ function PhoneContainer(props) {
 				<span id="count">{ props.phones }</span>
 			</p>
 			<div className="btnContainer">
-				<button onClick={() => props.buyPhone()}>Acheter</button>
-				<input type="text" value={totalPhone} />
+				<button onClick={() => props.buyPhone(totalPhone)}>Acheter</button>
+				<input type="text" value={totalPhone} onChange={e => setTotalPhone(e.target.value)} />
 			</div>
 		</div>
 	)
@@ -29,7 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		buyPhone: () => dispatch(buyPhone())
+		buyPhone: totalPhone => dispatch(buyPhone(totalPhone))
 	}
 }
 
